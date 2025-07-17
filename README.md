@@ -1,6 +1,6 @@
 # 🧭 Quest Pro Typing Capture with Eyegaze and Hand Tracking
 
-This Unity project enables VR typing tracking using a **real physical keyboard** and the **Meta Quest Pro**'s hand tracking and eye gaze capabilities. It is designed for **data collection**, prototyping, and natural typing experiments in mixed reality.
+This Unity project enables VR typing tracking using a **real physical keyboard** and the **Meta Quest Pro**'s hand tracking and eye gaze capabilities. It is designed for **data collection**, prototyping, and natural typing experiments in mixed reality. The main scene is EyeHands4TrackingWKeyboard.
 
 ---
 
@@ -145,7 +145,7 @@ Before using the system, the user must perform a **manual calibration** to align
 
 - ✅ Tested with **Unity 2022.3.5f1**
 - 🛰 UDP server listens on **port 5005**
-- 🔁 You can recalibrate at any time (use Q, P, Z again)
+- 🔁 You can recalibrate restarting the VR Application (use Q, P, Z again)
 - 🧩 The calibration points (`Qcalibration`, etc.) should **not move** with the keyboard — place them outside its hierarchy if needed
 
 ---
