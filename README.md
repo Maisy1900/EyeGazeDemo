@@ -157,6 +157,9 @@ Before using the system, the user must perform a **manual calibration** to align
   - [ ] Hand fingertip positions
   - [ ] Eye gaze raycast hit positions
   - [ ] Keyboard model transform (position)
+- [ ] Add instrution panel
+- [ ] Connect to the new panel (from the previous experiment)
+- [ ] Connect the logic of the previous experiment (63 sentences)
 
 ---
 
