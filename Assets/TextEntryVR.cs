@@ -10,6 +10,10 @@ public class TextEntryVR : MonoBehaviour
     UdpClient udpClient;
     IPEndPoint endPoint;
 
+    // Public event for external listeners (like Calibration.cs)
+    public delegate void CharReceivedHandler(string character);
+    public event CharReceivedHandler OnCharReceived;
+
     void Start()
     {
         udpClient = new UdpClient(5005);
@@ -30,6 +34,8 @@ public class TextEntryVR : MonoBehaviour
 
                 if (inputField != null)
                     inputField.text += receivedChar;  // Append only current char
+
+                OnCharReceived?.Invoke(receivedChar);
             }
         }
         catch (SocketException)

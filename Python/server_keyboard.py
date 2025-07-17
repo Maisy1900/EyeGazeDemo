@@ -2,7 +2,8 @@ import socket
 from pynput import keyboard
 
 # Set up UDP
-UDP_IP = "172.23.84.192"     # Change to target IP
+#UDP_IP = "172.23.84.192"     # standlone quest pro in VRLab (eduram)
+UDP_IP = "127.0.0.1"
 UDP_PORT = 5005          # Change to target port
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 

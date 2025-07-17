@@ -4,7 +4,6 @@ public class TransformApplier : MonoBehaviour
 {
     public Transform headTransform;       // Il "Center Eye" del Quest (tipicamente XR Rig Camera)
     public Vector3 localOffset = new Vector3(0f, -1f, 0.0f);  // Offset in avanti e in basso
-    public float extraXRotation = -90f;
     void Update()
     {
         if (headTransform == null)
