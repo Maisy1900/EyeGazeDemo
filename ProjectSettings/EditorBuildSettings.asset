@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EyeHands.unity
     guid: 878ea0561a9644e44b6d3658bb48f6a0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EyeHands4tracking.unity
     guid: 2cd755fdd6cfa3c488693f0e1e2981a5
+  - enabled: 1
+    path: Assets/Scenes/EyeHands4trackingWKeyboard.unity
+    guid: 3bca08d37a8862a45b34791cd228e1b8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1e9a7075b69243345899460b52822cdb, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1d0dee18f51bc664cb2bf7d3d48bcd26, type: 2}
