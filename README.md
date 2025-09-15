@@ -266,15 +266,6 @@ Audio lookup for phrases follows §6 (by **id** or **underscored text**).
 
 ---
 
-## 13) Common extension points
-
-- **Prediction UX:** filter model top‑k with `KeyboardLayout.PickTop3FromRing(currentKey, top3)`; feed to **MiniPadView**  
-- **Alternative input:** replace `vive_sender.py` or `ViveTracker` but keep the same public fields and OSC schema  
-- **Sensors:** extend `FrameSample` and update the CSV header in `KeyboardDataRecorder`  
-- **Layouts:** swap `KeyboardLayout` rows or add a constructor for different alphabets
-
----
-
 ## 14) Handy snippets
 
 ```csharp
@@ -330,8 +321,6 @@ python/
 ```
 
 ---
-
-**Done.** This file is ready to drop into the repo as `README.md`.
 
 # 🧭 Quest Pro Typing Capture with Eyegaze and Hand Tracking
 
