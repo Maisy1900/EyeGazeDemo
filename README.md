@@ -45,15 +45,18 @@ LeftEyeModel and RightEyeModel each have an OVREyeGaze component.
 
 They may also have the EyeTrackingRays script to draw a line showing where the eye is looking.
 
-4. How Eye Gaze Works
-OVREyeGaze
+---
 
+## 4. How Eye Gaze Works
+```text
+OVREyeGaze
+```
 Reads real-time eye-tracking data from the headset.
 
 Automatically updates the GameObject’s position and rotation based on eye movement.
-
+```text
 EyeTrackingRays
-
+```
 Draws a ray in front of the eye using a LineRenderer.
 
 Ray color states:
@@ -64,7 +67,9 @@ Ray color states:
 
 Includes optional pinch logic, though this demo focuses on gaze visualization only.
 
-5. Hover Interaction
+---
+
+## 5. Hover Interaction
 
 To enable hover detection:
 
