@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 
+// Creates a visual ray for eye tracking that detects objects and allows pinch selection
 [RequireComponent(typeof(LineRenderer))]
 public class EyeTrackingRays : MonoBehaviour
 {
@@ -31,13 +32,13 @@ public class EyeTrackingRays : MonoBehaviour
     private bool mockHandUsedForPinchSelection;
 
     private bool intercepting;
-
     private bool allowPinchSelection;
-
     private LineRenderer lineRenderer;
-
+    
+    // Cache interactable objects to avoid repeated GetComponent calls
     private Dictionary<int, EyeModels> models = new Dictionary<int, EyeModels>();
-
+    
+    // Stores the last object we looked at for selection
     private EyeModels lastEyeInteractable;
 
     void Start()
@@ -47,6 +48,7 @@ public class EyeTrackingRays : MonoBehaviour
         SetupRay();
     }
 
+    // Configure the LineRenderer's visual properties
     private void SetupRay()
     {
         lineRenderer.useWorldSpace = false;
@@ -61,20 +63,18 @@ public class EyeTrackingRays : MonoBehaviour
 
     private void Update()
     {
+        // Hide the ray when pinching
         lineRenderer.enabled = !IsPinching();
 
         SelectionStarted();
 
-
-        //clear all hover states
+        // Reset ray to default state if not looking at anything
         if (!intercepting)
         {
             lineRenderer.startColor = lineRenderer.endColor = rayColourDefaultState;
             lineRenderer.SetPosition(1, new Vector3 (0,0, transform.position.z + rayDistance));
             OnHoverEnded();
         }
-
-
     }
 
     private void FixedUpdate()
@@ -83,6 +83,7 @@ public class EyeTrackingRays : MonoBehaviour
 
         Vector3 rayDirction = transform.TransformDirection(Vector3.forward) * rayDistance;
 
+        // Raycast to detect what the user is looking at
         intercepting = Physics.Raycast(transform.position, rayDirction, out RaycastHit hit,Mathf.Infinity, layersToInclude);
 
         if (intercepting)
@@ -90,7 +91,7 @@ public class EyeTrackingRays : MonoBehaviour
             OnHoverEnded();
             lineRenderer.startColor = lineRenderer.endColor = rayColourHoverState;
 
-            //keep cash of eye interactables
+            // Cache the EyeModels component for performance
             if (!models.TryGetValue(hit.transform.gameObject.GetHashCode(), out EyeModels eyeInteractable))
             {
                 eyeInteractable = hit.transform.GetComponent<EyeModels>();
@@ -101,12 +102,12 @@ public class EyeTrackingRays : MonoBehaviour
             lineRenderer.SetPosition(1, new Vector3(0, 0, toLocalSpace.z));
 
             eyeInteractable.Hover(true);
-
             lastEyeInteractable = eyeInteractable;
         }
 
     }
     
+    // Handle selection via pinch gesture
     private void SelectionStarted()
     {
         if (IsPinching())

@@ -3724,6 +3724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rootOverride: {fileID: 0}
   _skeletonType: 1
   _updateRootPose: 0
   _updateRootScale: 1
@@ -6715,13 +6716,43 @@ PrefabInstance:
     - {fileID: 9033328662851314516, guid: 5f8bfcb346a4d5942bab74a84750ff73, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3448378737284357134, guid: 5f8bfcb346a4d5942bab74a84750ff73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1074988861146150823}
   m_SourcePrefab: {fileID: 100100000, guid: 5f8bfcb346a4d5942bab74a84750ff73, type: 3}
 --- !u!4 &1074988861146150821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2634828555194222260, guid: 5f8bfcb346a4d5942bab74a84750ff73, type: 3}
   m_PrefabInstance: {fileID: 1074988861146150820}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1074988861146150822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3448378737284357134, guid: 5f8bfcb346a4d5942bab74a84750ff73, type: 3}
+  m_PrefabInstance: {fileID: 1074988861146150820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1074988861146150823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074988861146150822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76d6f1177e79fb4d9dcf9813cb198e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 1
+  rayWidth: 0.01
+  layersToInclude:
+    serializedVersion: 2
+    m_Bits: 0
+  rayColourDefaultState: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  rayColourHoverState: {r: 1, g: 0, b: 0, a: 1}
+  rayColourSelectedState: {r: 0, g: 1, b: 0, a: 1}
+  handUsedForPinchSelection: {fileID: 0}
+  mockHandUsedForPinchSelection: 0
 --- !u!1 &1138538783213666936
 GameObject:
   m_ObjectHideFlags: 0
@@ -15406,6 +15437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rootOverride: {fileID: 0}
   _skeletonType: 0
   _updateRootPose: 0
   _updateRootScale: 1
