@@ -46,28 +46,34 @@ LeftEyeModel and RightEyeModel each have an OVREyeGaze component.
 They may also have the EyeTrackingRays script to draw a line showing where the eye is looking.
 
 4. How Eye Gaze Works
-OVREyeGaze reads the eye-tracking data from the headset.
+OVREyeGaze
 
-EyeTrackingRays:
+Reads real-time eye-tracking data from the headset.
 
-Draws a line (ray) forward from the eye.
+Automatically updates the GameObject’s position and rotation based on eye movement.
 
-Changes state when the ray hits an object:
+EyeTrackingRays
 
-Default color when not hitting anything.
+Draws a ray in front of the eye using a LineRenderer.
 
-“Hover” color when looking at an object.
+Ray color states:
 
-Contains some pinch-selection logic, but this demo mainly uses it to show the gaze ray.
+🟡 Default: Not hitting any object
 
-For hover to work:
+🔴 Hover: Looking at an object
 
-You must have at least one GameObject with a Collider in front of the eyes.
+Includes optional pinch logic, though this demo focuses on gaze visualization only.
 
-That object should be on a layer included in the layersToInclude mask on EyeTrackingRays.
+5. Hover Interaction
 
-(Optional) If you use the provided EyeModels script, it will react to hover events.
+To enable hover detection:
 
-5. Custom Logic
+Add at least one GameObject with a Collider in front of the eye models.
+
+Ensure the object’s layer is included in the layersToInclude mask in the EyeTrackingRays component.
+
+(Optional) Use the provided EyeModels script to make objects react to hover events.
+
+6. Custom Logic
 You can add your own logic inside EyeTrackingRays where objects are detected.
 For example, trigger events when the ray hits a specific object or when gaze is held for a certain time.
