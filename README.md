@@ -79,6 +79,40 @@ Ensure the object’s layer is included in the layersToInclude mask in the EyeTr
 
 (Optional) Use the provided EyeModels script to make objects react to hover events.
 
-6. Custom Logic
+---
+
+## 6. Custom Logic
 You can add your own logic inside EyeTrackingRays where objects are detected.
 For example, trigger events when the ray hits a specific object or when gaze is held for a certain time.
+
+---
+
+## 7. Setup and Testing on Device
+
+To test that the eye gaze demo works correctly, you must build and run the project on your headset (it will not function in the Unity editor).
+
+Steps:
+
+Connect your Meta Quest headset to your computer via USB.
+
+In Unity, go to:
+```text
+File → Build Settings
+```
+
+Select Android as the platform and click Switch Platform.
+
+Open:
+```text
+Edit → Project Settings → Player
+```
+
+Under the Player tab, enter:
+
+   Company Name: (any name)
+
+   Product Name: (any name, e.g., EyeGazeDemo)
+
+Ensure XR Plug-in Management has Oculus enabled for Android.
+
+Build and run the project directly to your headset.
